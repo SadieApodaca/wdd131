@@ -1,0 +1,44 @@
+@import url("https://use.typekit.net/wkr8fnv.css");
+#mission {
+    border: 1px solid #949598;
+    margin: 0 10%;
+}
+body {
+    font-size: 1.3em;
+}
+h2 {
+    color: #4F9ACF;
+    text-align: center;
+    font-size: .9em;
+    font-family: "minion-pro", serif;
+    letter-spacing: 3px;
+}
+h1 {
+    text-align: center;
+    margin-top: 5%;
+    font-family: "minion-pro", serif;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+#italics {
+    font-style: italic;
+}
+#content {
+    width: 60%;
+    margin: 0 auto;
+    line-height: 1.5em;
+}
+#list {
+    display: grid;
+    row-gap: 20px;
+}
+hr {
+   width: 60%; 
+   background-color: #949598;
+}
+#logo {
+    width: 180px;
+    display: block;
+    margin: 0 auto;
+    padding: 50px;
+}
