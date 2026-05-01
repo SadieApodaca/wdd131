@@ -7,8 +7,15 @@
     <meta name="author" content="Sadie Apodaca">
     <title>Mission Statement</title>
     <link href="styles.css" rel="stylesheet">
+                 
+                    
 </head>
 <body>
+    <select>
+        <option>Choose Mode</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+    </select>                    
     <div id="mission">
         <h1>MISSION STATEMENT</h1>
         <h2>BRIGHAM YOUNG UNIVERISTY-IDAHO</h2>
@@ -27,5 +34,28 @@
         </div>
         <img id="logo" src="byui-logo-blue.webp">
     </div>
+    <script>
+        let selectElem = document.querySelector('select');
+        let logo = document.querySelector('img');
+
+        selectElem.addEventListener('change', changeTheme);
+
+        function changeTheme() {
+            let current = selectElem.value;
+            if (current == 'dark') {
+                // code for changes to colors and logo
+                document.body.style.backgroundColor = "black"
+                document.getElementsByTagName("h1")[0].style.color = "white";
+                document.getElementById("content").style.color = "white";
+                logo.src="byui-logo-white.png"
+            } else {
+                // code for changes to colors and logo
+                document.body.style.backgroundColor = "white"
+                document.getElementsByTagName("h1")[0].style.color = "black";
+                document.getElementById("content").style.color = "black";
+                logo.src="byui-logo-blue.webp"
+            }
+        }
+    </script>
 </body>
 </html>
