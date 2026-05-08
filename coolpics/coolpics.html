@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Pics</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
+    <link href="coolpics.css" rel="stylesheet">
+    <meta name="description" content="A gallery of photos">
+    <meta name="author" content="Sadie Apodaca">
+</head>
+<body>
+    <header>
+        <h1>Cool Pics📷</h1>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Menu</button>
+            <nav id="myDropdown" class="dropdown-content">
+                <a>Home</a>
+                <a>People</a>
+                <a>Places</a>
+                <a>About</a>
+                <a>Contact</a>
+            </nav>
+        </div>
+    </header>
+    <h3>Current Work</h3>
+    <div class="grid">
+        <div class="container">
+            <img src="norris-sm.jpg">
+        </div>
+        <div class="container">
+            <img src="norris-sm.jpg">
+        </div>
+        <div class="container">
+            <img src="norris-sm.jpg">
+        </div>
+        <div class="container">
+            <img src="norris-sm.jpg">
+        </div>
+        <div class="container">
+            <img src="norris-sm.jpg">
+        </div>
+        <div class="container">
+            <img src="norris-sm.jpg">
+        </div>
+        <div class="container">
+            <img src="norris-sm.jpg">
+        </div>
+        <div class="container">
+            <img src="norris-sm.jpg">
+        </div>
+        <div class="container">
+            <img src="norris-sm.jpg">
+        </div>
+        <div class="container">
+            <img src="norris-sm.jpg">
+        </div>
+        <div class="container">
+            <img src="norris-sm.jpg">
+        </div>
+        <div class="container">
+            <img src="norris-sm.jpg">
+        </div>
+    </div>
+    <footer>
+        <p>2026 Spring WDD 131</p>
+    </footer>
+</body>
+<script>
+    function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</html>
