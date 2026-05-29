@@ -51,16 +51,14 @@ header, footer {
     grid-column: 1/3;
 }
 
+        
+
 @media (min-width: 600px) {
     .movie {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    #miles {
-        grid-column: 1/2;
-        grid-row: 1/6;
-    }
-    #heaven {
+    .movie img {
         grid-column: 1/2;
         grid-row: 1/6;
     }
