@@ -48,6 +48,7 @@ form.addEventListener("submit", function (event) {
     const availableDate = form.availableDate.value;
     const selectedCampuses = getSelectedCampuses();
     const note = form.notes.value.trim();
+    var errMsg = "";
 
   // Validate the input
   // Let the user know to select at least one campus
@@ -56,16 +57,18 @@ form.addEventListener("submit", function (event) {
     const campuses = form.campus;
     if(numberOfCampuses === "one" && getSelectedCampuses(campuses).length == 0) {
         console.log("No campuses checked");
-        document.getElementById("output").textContent = "Please select at least one campus."
-
+        //document.getElementById("output").textContent = "Please select at least one campus."
+        errMsg = "Please select at least one campus."
     }
     if(numberOfCampuses === "many" && getSelectedCampuses(campuses).length < 2) {
         console.log("Not enough campuses selected.")
-        document.getElementById("output").textContent = "Please select at least two campuses."
+        //document.getElementById("output").textContent = "Please select at least two campuses."
+        errMsg = "Please select at least two campuses."
     }
     if(numberOfCampuses === "one" && getSelectedCampuses(campuses).length > 1) {
         console.log("Too many campuses selected.")
-        document.getElementById("output").textContent = "Please select only one campus or change your preference."
+        //document.getElementById("output").textContent = "Please select only one campus or change your preference."
+        errMsg = "Please select only one campus or change your preference."
     }
 
   
@@ -80,14 +83,19 @@ form.addEventListener("submit", function (event) {
         return;
     }
 
-    output.innerHTML = `
-    <h2>Preference Submitted</h2>
-    <p>${firstName} ${lastName}</p>
-    <p>Email: ${email}</p>
-    <p>Availability: ${availableDate}</p>
-    <p>Campuses: ${selectedCampuses.join(", ")}</p>
-    <p>Preference Level: ${type}</p>
-    `;
+    if(errMsg.length > 0){
+        output.textContent = errMsg;
+    }
+    else {
+        output.innerHTML = `
+        <h2>Preference Submitted</h2>
+        <p>${firstName} ${lastName}</p>
+        <p>Email: ${email}</p>
+        <p>Availability: ${availableDate}</p>
+        <p>Campuses: ${selectedCampuses.join(", ")}</p>
+        <p>Preference Level: ${type}</p>
+        `;
+    }
 
     form.reset();
     updateNotesField();
