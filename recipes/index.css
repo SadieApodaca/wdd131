@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+h1 {
+    font-family: "Amatic SC";
+}
+#logo {
+    width: 40px;
+}
+header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+#search {
+    width: 10px;
+}
+#bar {
+    width: 100%;
+}
+h2 {
+    font-family: "Amatic SC";
+    color: dodgerblue;
+}
+.social img {
+    width: 25px;
+}
+footer {
+    text-align: center;
+    margin: 10px;
+}
+#flex {
+    display: flex;
+    flex-direction: column;
+    border: 2px black solid;
+    border-radius: 20px;
+    padding: 20px;
+}
+.tag {
+    width: 60px;
+    text-align: center;
+    margin: 2px;
+}
+.rating {
+    margin-top: -20px;
+}
+
+
+@media screen and (min-width: 650px) {
+    #apple {
+        width: 60%;
+    }
+    #flex {
+        flex-direction: row;
+        gap: 20px;
+    }
+    p {
+        display: block;
+    }
+    .social img {
+        width: 50px;
+    }
+    .social {
+        order: 1;
+    }
+    footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+}
