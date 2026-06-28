@@ -28,7 +28,7 @@ footer {
     text-align: center;
     margin: 10px;
 }
-#flex {
+/* #flex {
     display: flex;
     flex-direction: column;
     border: 2px black solid;
@@ -67,4 +67,4 @@ footer {
         justify-content: space-between;
         margin-top: 40px;
     }
-}
+} */
