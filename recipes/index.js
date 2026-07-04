@@ -299,82 +299,179 @@ const recipes = [
     
 //     });
 
-function search() {
+// function search() {
 
-    let recipeQuery = input.value;
+//     let recipeQuery = input.value;
 
-    let filteredRecipes = recipes.filter(function(recipe){
-        return ( 
-            recipe.name.toLowerCase().includes(recipeQuery.toLowerCase()) ||
-            recipe.description.toLowerCase().includes(recipeQuery.toLowerCase()) || 
-            recipe.tags.find(tag => tag.toLowerCase().includes(recipeQuery.toLowerCase()))
-        );
-    })
+//     let filteredRecipes = recipes.filter(function(recipe){
+//         return ( 
+//             recipe.name.toLowerCase().includes(recipeQuery.toLowerCase()) ||
+//             recipe.description.toLowerCase().includes(recipeQuery.toLowerCase()) || 
+//             recipe.tags.find(tag => tag.toLowerCase().includes(recipeQuery.toLowerCase()))
+//         );
+//     })
 
 
-    // clear out any previous content
-    recipeContainer.innerHTML = '';
-    // output onto screen
-    filteredRecipes.forEach(function(recipe){
-      renderRecipe(recipe);
-    })
+//     // clear out any previous content
+//     recipeContainer.innerHTML = '';
+//     // output onto screen
+//     filteredRecipes.forEach(function(recipe){
+//       renderRecipe(recipe);
+//     })
+// }
+
+// let recipeContainer = document.querySelector('#recipe-container');
+// let input = document.querySelector('#search');
+// let button = document.querySelector('button');
+
+// button.addEventListener('click', search);
+
+// /* for the enter key to work on search - not just clicking the search button */
+// input.addEventListener('keypress', handleEnter);
+// function handleEnter(event) {
+//   if (event.key === 'Enter') {
+//     search();
+//   }
+// }
+
+
+// function tagTemplate(tags) {
+//     return tags.map((tag)=> `<button>${tag}</button>`).join(' ');
+// }
+
+// function difficultyTemplate(rating) {
+// 		let html = `<span
+// 	class="rating"
+// 	role="img"
+// 	aria-label="Rating: ${rating} out of 5"
+// >  Difficulty: `
+//     for (let i = 1; i <= 5; i++) {
+//       if (i <= rating) {
+//         html += `<span aria-hidden="true" class="icon-boot"> ⭐</span>`
+//       } else {
+//         html += `<span aria-hidden="true" class="icon-empty">▫️</span>`
+//       }			
+//     }
+//     html += `</span>`
+//     return html
+//   }
+
+// function recipesTemplate(recipe) {
+//     return `<div class="recipe-card">
+//   <div class="recipe-content">
+//     <h2>${recipe.name}</h2>
+//     <div class="recipe-tags">
+//       ${tagTemplate(recipe.tags)}
+//     </div>
+//     <p>${recipe.description}</p>
+//   </div>
+// </div>`
+// }
+
+// function renderRecipe(recipe) {
+//     let html = recipesTemplate(recipe);
+//     recipeContainer.innerHTML += html
+// }
+
+// function init() {
+//     renderRecipe(recipes[randomNum]);
+// }
+
+// init();
+
+
+
+
+
+function renderRecipes() {
+  const container = document.getElementById('recipes-container');
+  container.innerHTML = '';
+  
+  recipes.forEach(recipe => {
+    const card = document.createElement('div');
+    card.className = 'recipe-card';
+    
+    card.innerHTML = `
+      <img src="${recipe.image}" alt="${recipe.title}" class="recipe-image">
+      ${recipe.badge ? `<span class="recipe-badge">${recipe.badge}</span>` : ''}
+      <div class="recipe-content">
+        <h3 class="recipe-title">${recipe.title}</h3>
+        <p class="recipe-description">${recipe.description}</p>
+        <div class="recipe-meta">
+          <span><i class="fas fa-clock"></i> ${recipe.time}</span>
+          <span><i class="fas fa-utensils"></i> ${recipe.servings} servings</span>
+        </div>
+      </div>
+    `;
+    
+    container.appendChild(card);
+  });
 }
 
-let recipeContainer = document.querySelector('#recipe-container');
-let input = document.querySelector('#search');
-let button = document.querySelector('button');
+// Initialize the app
+document.addEventListener('DOMContentLoaded', () => {
+  renderRecipes();
+  
+  // Add click event to filter buttons
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      // In a real app, you would filter recipes here
+    });
+  });
+  
+  // Search functionality
+  const searchInput = document.querySelector('.search-input');
+  searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    // In a real app, you would filter recipes based on search term
+  });
+});
+// Recipe database - keep this as is
+const recipes = [
+  // ... your existing recipe data ...
+];
 
-button.addEventListener('click', search);
-
-/* for the enter key to work on search - not just clicking the search button */
-input.addEventListener('keypress', handleEnter);
-function handleEnter(event) {
-  if (event.key === 'Enter') {
-    search();
-  }
+// Utility function to get recipe by ID
+function getRecipeById(id) {
+  return recipes.find(recipe => recipe.id === parseInt(id));
 }
 
+// Function to render recipe cards on homepage
+function renderRecipeCards() {
+  const container = document.getElementById('recipes-container');
+  if (!container) return;
 
-function tagTemplate(tags) {
-    return tags.map((tag)=> `<button>${tag}</button>`).join(' ');
+  container.innerHTML = recipes.map(recipe => `
+    <a href="recipe.html?id=${recipe.id}" class="recipe-card">
+      <img src="${recipe.image}" alt="${recipe.title}" class="recipe-image">
+      ${recipe.badge ? `<span class="recipe-badge">${recipe.badge}</span>` : ''}
+      <div class="recipe-content">
+        <h3 class="recipe-title">${recipe.title}</h3>
+        <p class="recipe-description">${recipe.description}</p>
+        <div class="recipe-meta">
+          <span><i class="fas fa-clock"></i> ${recipe.time}</span>
+          <span><i class="fas fa-utensils"></i> ${recipe.servings} servings</span>
+        </div>
+      </div>
+    </a>
+  `).join('');
 }
 
-function difficultyTemplate(rating) {
-		let html = `<span
-	class="rating"
-	role="img"
-	aria-label="Rating: ${rating} out of 5"
->  Difficulty: `
-    for (let i = 1; i <= 5; i++) {
-      if (i <= rating) {
-        html += `<span aria-hidden="true" class="icon-boot"> ⭐</span>`
-      } else {
-        html += `<span aria-hidden="true" class="icon-empty">▫️</span>`
-      }			
-    }
-    html += `</span>`
-    return html
-  }
-
-function recipesTemplate(recipe) {
-    return `<div class="recipe-card">
-  <div class="recipe-content">
-    <h2>${recipe.name}</h2>
-    <div class="recipe-tags">
-      ${tagTemplate(recipe.tags)}
-    </div>
-    <p>${recipe.description}</p>
-  </div>
-</div>`
+// Initialize homepage
+if (document.getElementById('recipes-container')) {
+  document.addEventListener('DOMContentLoaded', () => {
+    renderRecipeCards();
+    
+    // Filter button functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+  });
 }
-
-function renderRecipe(recipe) {
-    let html = recipesTemplate(recipe);
-    recipeContainer.innerHTML += html
-}
-
-function init() {
-    renderRecipe(recipes[randomNum]);
-}
-
-init();
