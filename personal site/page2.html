@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link href="stylesheet.css" rel="stylesheet">
+    <script src="page2.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img id="logo" src="crochetlogo.png"></a>
+        <nav id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;></a>
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">View Products</a>
+            <a href="order.html">Order</a> 
+        </nav>
+        <a id="bars" onclick="openNav()">&#9776;</a>
+    </header>
+    <form id="orderForm">
+        <h3>Order Here!</h3>
+        <label for="productType">Choose your product:</label>
+        <select id="productType" name="productType" onchange="productChange()" required>
+            <option value="blank"></option>
+            <option value="keychain">Keychain</option>
+            <option value="stuffedAnimal">Stuffed Animal</option>
+            <option value="bag">Bag</option>
+            <option value="blanket">Baby Blanket</option>
+        </select>
+        <br>
+        <label id ="lbkeychain" for="keychainType" hidden>Choose your keychain:</label>
+        <select id="keychainType" name="keychainType" hidden>
+            <option value="blank"></option>
+            <option value="axolotl">Axolotl</option>
+            <option value="octopus">Octopus</option>
+            <option value="turtle">Turtle</option>
+            <option value="unicorn">Unicorn</option>
+        </select>
+        <br>    
+        <label id="lbanimal" for="animalType" hidden>Choose your stuffed animal:</label>
+        <select id="animalType" name="animalType" hidden>
+            <option value="blank"></option>
+            <option value="dinosaur">Dinosaur</option>
+            <option value="duck">Duck</option>
+            <option value="elephant">Elephant</option>
+            <option value="octopus">Octopus</option>
+        </select>
+        <br>
+        <label id="lbbag" for="bagSize" hidden>Bag Size:</label>
+        <select id="bagSize" name="bagSize" hidden>
+            <option value="blank"></option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        <br>
+        <label id="lbbagdes" for="bagDesign" hidden>Bag Design:</label>
+        <select id="bagDesign" name="bagDesign" hidden>
+            <option value="blank"></option>
+            <option value="solid">Solid squares</option>
+            <option value="hearts">Heart squares</option>
+            <option value="flowers">Flower squares</option>
+        </select>
+        <br>
+        <label id="lbbagcolor" for="bagColors" hidden>Number of colors:</label>
+        <select id="bagColors" name="bagColors" hidden>
+            <option value="blank"></option>
+            <option value="one">One</option>
+            <option value="two">Two</option>
+            <option value="three">Three</option>
+            <option value="four">Four</option>
+            <option value="five">Five</option>
+        </select>
+        <br>
+        <label id="lbblanket" for="blanketSize" hidden>Blanket Size:</label>
+        <select id="blanketSize" name="blanketSize" hidden>
+            <option value="blank"></option>
+            <option value="small">36x36 Square</option>
+            <option value="medium">36x48 Rectangle</option>
+            <option value="large">42x54 Rectangle</option>
+        </select>
+        <br>
+        <label id="lbblanketdes" for="blanketDesign" hidden>Blanket design:</label>
+        <select id="blanketDesign" name="blanketDesign" hidden>
+            <option value="blank"></option>
+            <option value="solid">Solid</option>
+            <option value="striped">Striped</option>
+            <option value="chevron">Chevron</option>
+            <option value="granny">Granny Squares</option>
+        </select>
+        <br>
+        <label id="lbblanketcolor" for="blanketColors" hidden>Number of colors:</label>
+        <select id="blanketColors" name="blanketColors" hidden>
+            <option value="blank"></option>
+            <option value="one">One</option>
+            <option value="two">Two</option>
+            <option value="three">Three</option>
+            <option value="four">Four</option>
+            <option value="five">Five</option>
+        </select>  
+
+      <div id="notesContainer" class="field full">
+        <label for="notes">Other custom request notes:</label>
+        <br>
+        <input id="notes" name="notes" type="text" size="300" />
+      </div>
+
+      <button class="full" type="submit">Submit Preferences</button>
+    </form>
+    <footer>
+        <a href="index.html"><img id="logo" src="crochetlogo.png"></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">View Products</a>
+            <a href="order.html">Order</a>
+        </nav>
+    </footer>
+</body>
+</html>
