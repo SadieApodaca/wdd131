@@ -15,6 +15,10 @@ footer {
     display: flex;
     background-color: #b7b7a4;
     font-family: "Delius";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 footer nav {
     margin-top: 20px;
@@ -36,11 +40,14 @@ footer nav a :hover {
     position: relative;
     z-index: -1;
 }
-h2 {
+h1 {
     font-family: "Delius";
     position: absolute;
-    left: 15%;
+    left: 3%;
     top: 6%;
+}
+h2 {
+    font-family: "Delius";
 }
 #viewbtn {
     position: absolute;
@@ -128,7 +135,15 @@ h3, p {
 
 
 
-
+.arrays {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#portbody {
+    padding-bottom: 20%;
+    margin: 10%;
+}
 
 
 #orderForm {
@@ -136,7 +151,7 @@ h3, p {
     border: 2px solid black;
     padding: 40px;
     text-align: center;
-    margin: 20% 17%;
+    margin: 30% 17%;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -145,4 +160,49 @@ h3, p {
 #notes {
     width: 200px;
     height: 100px;
+}
+.full {
+    margin-top: 5%;
+}
+
+
+@media screen and (min-width: 600px) {
+    #body {
+        display: flex;
+        padding-bottom: 7%;
+        margin-top: 7%;
+        justify-content: space-evenly;
+    }
+    #body div {
+        max-width: 300px;
+    }
+    .keyimg {
+        height: 200px;
+    }
+    #heroimg {
+        height: 600px;
+    }
+    #viewbtn {
+        left: 20%;
+        top: 50%;
+        font-size: 1.5em;
+    }
+    #orderbtn {
+        right: 20%;
+        top: 50%;
+        font-size: 1.5em;
+    }
+    h1 {
+        left: 30%;
+        top: 10%;
+        font-size: 3em;
+    }
+    #orderForm {
+        vertical-align: top;
+        margin: 5% 22%;
+        height: 60vh;
+    }
+    #notes {
+        width: 400px;
+    }
 }
