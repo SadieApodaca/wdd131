@@ -1,6 +1,6 @@
 const keychainImg = ["tinified/pink-mew.jpg", "tinified/ninja-turtle.jpg", "tinified/unicorn.jpg"];
 const animalImg = ["tinified/blue-dino.jpg", "tinified/teal-octopus.jpg", "tinified/yellow-duck.jpg"];
-const bagImg = ["tinified/gray-bag.jpg", "tinified/purple-pattern.jpg"];
+const bagImg = ["tinified/gray-bag.JPG", "tinified/purple-pattern.jpg"];
 const blanketImg = ["tinified/peach-stripes.jpg", "tinified/flower-blanket.jpg", "tinified/orange-blue-blanket.jpg"];
 
 keychainImg.forEach(key => {
