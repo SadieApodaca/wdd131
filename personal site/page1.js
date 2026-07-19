@@ -1,7 +1,7 @@
 const keychainImg = ["tinified/pink-mew.jpg", "tinified/ninja-turtle.jpg", "tinified/unicorn.jpg"];
 const animalImg = ["tinified/blue-dino.jpg", "tinified/teal-octopus.jpg", "tinified/yellow-duck.jpg"];
 const bagImg = ["tinified/gray-bag.jpg", "tinified/purple-pattern.jpg"];
-const blanketImg = ["tinified/blue-zig-zag.jpg", "tinified/flower-blanket.jpg", "tinified/orange-blue-blanket.jpg"];
+const blanketImg = ["tinified/blue-zig-zag.JPG", "tinified/flower-blanket.jpg", "tinified/orange-blue-blanket.jpg"];
 
 keychainImg.forEach(key => {
         //Display a new image for each item in the array.
